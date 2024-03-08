@@ -1,0 +1,19 @@
+object FrmPrincipal: TFrmPrincipal
+  Left = 350
+  Height = 240
+  Top = 250
+  Width = 320
+  Caption = 'MVC - Conceitual'
+  ClientHeight = 240
+  ClientWidth = 320
+  LCLVersion = '3.2.0.0'
+  object BtnCarregarController: TButton
+    Left = 88
+    Height = 25
+    Top = 88
+    Width = 150
+    Caption = 'Carregar Controller'
+    TabOrder = 0
+    OnClick = BtnCarregarControllerClick
+  end
+end

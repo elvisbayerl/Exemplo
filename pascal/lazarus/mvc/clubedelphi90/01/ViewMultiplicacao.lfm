@@ -1,0 +1,75 @@
+object FrmMultiplicacao: TFrmMultiplicacao
+  Left = 404
+  Height = 240
+  Top = 241
+  Width = 320
+  Caption = 'Multiplicação'
+  ClientHeight = 240
+  ClientWidth = 320
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '3.2.0.0'
+  object Label1: TLabel
+    Left = 61
+    Height = 15
+    Top = 54
+    Width = 35
+    Caption = 'Valor 1'
+  end
+  object Label2: TLabel
+    Left = 99
+    Height = 15
+    Top = 76
+    Width = 7
+    Caption = 'x'
+    Font.Style = [fsBold]
+    Layout = tlCenter
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 155
+    Height = 15
+    Top = 54
+    Width = 35
+    Caption = 'Valor 2'
+  end
+  object Label4: TLabel
+    Left = 193
+    Height = 15
+    Top = 76
+    Width = 8
+    Caption = '='
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object EdtValor1: TEdit
+    Left = 16
+    Height = 23
+    Top = 72
+    Width = 80
+    TabOrder = 0
+  end
+  object EdtValor2: TEdit
+    Left = 110
+    Height = 23
+    Top = 72
+    Width = 80
+    TabOrder = 1
+  end
+  object EdtSolucao: TEdit
+    Left = 204
+    Height = 23
+    Top = 72
+    Width = 80
+    TabOrder = 2
+  end
+  object BtnCalcular: TButton
+    Left = 80
+    Height = 25
+    Top = 120
+    Width = 150
+    Caption = 'Calcular'
+    TabOrder = 3
+    OnClick = BtnCalcularClick
+  end
+end

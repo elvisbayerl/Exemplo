@@ -1,0 +1,63 @@
+object FrmContato: TFrmContato
+  Left = 350
+  Height = 240
+  Top = 250
+  Width = 320
+  Caption = 'Contato'
+  ClientHeight = 240
+  ClientWidth = 320
+  LCLVersion = '3.2.0.0'
+  object Label1: TLabel
+    Left = 8
+    Height = 15
+    Top = 8
+    Width = 33
+    Caption = 'Nome'
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 15
+    Top = 56
+    Width = 44
+    Caption = 'Telefone'
+  end
+  object BtnSalvar: TButton
+    Left = 152
+    Height = 25
+    Top = 200
+    Width = 75
+    Caption = 'Salvar'
+    TabOrder = 0
+    OnClick = BtnSalvarClick
+  end
+  object BtnCancelar: TButton
+    Left = 232
+    Height = 25
+    Top = 200
+    Width = 75
+    Caption = 'Cancelar'
+    TabOrder = 1
+    OnClick = BtnCancelarClick
+  end
+  object EdtNome: TDBEdit
+    Left = 8
+    Height = 23
+    Top = 28
+    Width = 240
+    DataField = 'NOME'
+    DataSource = DMPrincipal.DSContato
+    MaxLength = 0
+    TabOrder = 2
+  end
+  object EdtTelefone: TDBEdit
+    Left = 8
+    Height = 23
+    Top = 77
+    Width = 80
+    DataField = 'TELEFONE'
+    DataSource = DMPrincipal.DSContato
+    EditMask = '!\(99\)0000-0000;1;_'
+    MaxLength = 13
+    TabOrder = 3
+  end
+end

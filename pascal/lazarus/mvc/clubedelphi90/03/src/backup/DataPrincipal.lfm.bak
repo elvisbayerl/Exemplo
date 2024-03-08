@@ -1,0 +1,84 @@
+object DMPrincipal: TDMPrincipal
+  OldCreateOrder = False
+  Height = 350
+  HorizontalOffset = 424
+  VerticalOffset = 251
+  Width = 350
+  object Connection: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    ClientCodepage = 'ISO8859_1'
+    Properties.Strings = (
+      'AutoEncodeStrings=True'
+      'controls_cp=CP_UTF8'
+      'codepage=ISO8859_1'
+    )
+    Connected = True
+    HostName = 'localhost'
+    Port = 3050
+    Database = 'D:\dev\mvc\02\database\firebird\2.5\AGENDA.FDB'
+    User = 'SYSDBA'
+    Password = 'masterkey'
+    Protocol = 'firebird-2.5'
+    LibraryLocation = 'D:\dev\mvc\02\database\firebird\2.5\lib\fbclient.dll'
+    Left = 68
+    Top = 62
+  end
+  object QryContato: TZQuery
+    Connection = Connection
+    SQL.Strings = (
+      'select ID_CONTATO, '
+      '       NOME, '
+      '       TELEFONE'
+      '  from CONTATO'
+      ' order by NOME'
+    )
+    Params = <>
+    Left = 160
+    Top = 62
+    object QryContatoID_CONTATO: TLongintField
+      DisplayLabel = 'Código'
+      FieldKind = fkData
+      FieldName = 'ID_CONTATO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object QryContatoNOME: TStringField
+      DisplayLabel = 'Nome'
+      DisplayWidth = 64
+      FieldKind = fkData
+      FieldName = 'NOME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 128
+    end
+    object QryContatoTELEFONE: TStringField
+      DisplayLabel = 'Telefone'
+      FieldKind = fkData
+      FieldName = 'TELEFONE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      EditMask = '!\(99\)0000-0000;1;_'
+      Size = 16
+    end
+  end
+  object DSContato: TDataSource
+    DataSet = QryContato
+    Left = 163
+    Top = 146
+  end
+  object BDContato: TBufDataset
+    FieldDefs = <>
+    Left = 71
+    Top = 185
+  end
+end
